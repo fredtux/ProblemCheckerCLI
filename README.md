@@ -16,11 +16,16 @@ For testing purposes the _"testing"_ directory was included and contains the fol
 3. Results
     * results.json - contains the results (NOTICE: the first result is correct but the second is incorrect for testing purposes)
 
+### 0. Using help
+```bash
+python tester.py -h
+```
+
 ### 1. Using arguments
 ```bash 
-    python tester.py --algo testing/testcase.py --tests testing/tests.json --results testing/results.json --language python
+python tester.py --algo testing/testcase.py --tests testing/tests.json --results testing/results.json --language python
 ```
 ### 2. Using questions
 ```bash
-    python tester.py
+python tester.py
 ```
