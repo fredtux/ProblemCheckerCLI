@@ -1,7 +1,8 @@
 from threading import Event, Thread
+from abc import ABC, abstractmethod
 
 
-class Executor:
+class Executor(ABC):
     @property
     def subproc(self):
         return self._subproc
@@ -50,3 +51,7 @@ class Executor:
         """Main worker for communication"""
 
         self.output, self.error = self.subproc.communicate(input=data.encode())
+
+    @abstractmethod
+    def __call__(self):
+        pass

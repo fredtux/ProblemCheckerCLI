@@ -5,7 +5,7 @@ from Model.Executor import Executor
 
 class ExecutorPython(Executor):
     def __init__(self):
-        pass
+        super().__init__()
 
     def __call__(self, file_name):
         """Open subprocess when called"""
