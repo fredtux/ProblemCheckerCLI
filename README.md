@@ -4,7 +4,17 @@ The current checker works for Python, PHP and JavaScript _(Node.js)_ only but ca
 Note that you must have the interpreter for each language already installed
 
 ## Usage
-For testing purposes the _"testing"_ directory was included
+For testing purposes the _"testing"_ directory was included and contains the following
+1. Test cases
+    * testcase.py - algorithm for Python
+    * testcase.php - algorithm for PHP
+    * testcase.js - algorithm for JavaScript
+
+2. Tests
+    * tests.json - contains 2 tests for the test case files
+
+3. Results
+    * results.json - contains the results (NOTICE: the first result is correct but the second is incorrect for testing purposes)
 
 ### 1. Using arguments
 ```bash 
