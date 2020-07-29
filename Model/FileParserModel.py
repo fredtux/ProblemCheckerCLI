@@ -1,5 +1,6 @@
 from json import load
 
+
 class FileParserModel:
     @staticmethod
     def get_json_from_file(file):
@@ -11,10 +12,25 @@ class FileParserModel:
         return data
 
     @staticmethod
-    def get_lines(data):
+    def get_cases(data):
         """Get the lines from json data"""
 
-        if not "lines" in data:
+        if not "cases" in data:
             raise Exception('Invalid json format')
 
-        return data['lines']
+        return data['cases']
+
+    @staticmethod
+    def parse_results(data):
+        """Parse results to mimick stdin"""
+
+        result = []
+
+        for case in data:
+            partial_result = []
+            for line in case:
+                partial_result.append(" ".join([str(elem) for elem in line]))
+
+            result.append(partial_result)
+
+        return result

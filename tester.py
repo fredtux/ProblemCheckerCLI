@@ -1,14 +1,16 @@
 from Controller.CheckerController import CheckerController
-from sys import argv
+import argparse
 
-if len(argv) >= 2:
-    tested_file = argv[1]
-else:
-    tested_file = None
+parser = argparse.ArgumentParser(description='This is an alogrithm testing script')
+parser.add_argument("-a", "--algo", help="Algorithm to be tested")
+parser.add_argument("-t", "--tests", help="Tests json file")
+parser.add_argument("-r", "--results", help="Results json file")
+parser.add_argument("-l", "--language", help="Programming language of the algorithm")
 
-if len(argv) >= 3:
-    results_file = argv[2]
-else:
-    results_file = None
+args = parser.parse_args()
 
-CheckerController.main_check(tested_file, results_file)
+result, stats = CheckerController.main_check(tested_file=args.algo, results_file=args.results, tests_file=args.tests, language=args.language)
+
+print(*result, sep="\n")
+print("\n")
+print(f"Success: {stats['success']} Fail: {stats['failed']}\nSuccess rate: {stats['success']}/{stats['success'] + stats['failed']}")
