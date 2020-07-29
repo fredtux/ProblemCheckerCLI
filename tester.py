@@ -1,7 +1,7 @@
 from Controller.CheckerController import CheckerController
 import argparse
 
-parser = argparse.ArgumentParser(description='This is an alogrithm testing script')
+parser = argparse.ArgumentParser(description='This is an algorithm testing script')
 parser.add_argument("-a", "--algo", help="Algorithm to be tested")
 parser.add_argument("-t", "--tests", help="Tests json file")
 parser.add_argument("-r", "--results", help="Results json file")
