@@ -1,4 +1,4 @@
-# Algorightm checker
+# Algorithm checker
 The current checker works for Python, PHP and JavaScript _(Node.js)_ only but can be extended for any language
 
 Note that you must have the interpreter for each language already installed
