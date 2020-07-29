@@ -15,7 +15,8 @@ class FileChooserController():
         """Get results"""
 
         # Get results file
-        results_file = FileChooserModel.choose(FileChooserView.results_file_text())
+        results_file = FileChooserModel.choose(
+            FileChooserView.results_file_text())
 
         # Return json from file
         return FileParserModel.get_json_from_file(results_file)

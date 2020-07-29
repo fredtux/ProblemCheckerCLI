@@ -9,11 +9,11 @@ class CheckerController:
     def main_check(tested_file=None, results_file=None, tests_file=None, language=None):
         """Main check function"""
 
-        ### Returned variables
+        # Returned variables
         final_result = []
         stats = {"success": 0, "failed": 0}
 
-        ### Get values if parameters were not passed
+        # Get values if parameters were not passed
         # Get filename
         if tested_file is None:
             file_name = FileChooserController.get_tested_file()
@@ -36,15 +36,15 @@ class CheckerController:
         if language is None:
             language = FileChooserController.get_language()
 
-
-        ### Get tests and results
+        # Get tests and results
         # Parse cases into lines
         cases = FileParserModel.get_cases(tests)
 
         # Parse results into lines
-        results = FileParserModel.parse_results(FileParserModel.get_cases(results))
+        results = FileParserModel.parse_results(
+            FileParserModel.get_cases(results))
 
-        ### Process tests and results
+        # Process tests and results
         # Get executor
         executor = ExecutorFactory.get_executor(language)
 
@@ -72,7 +72,8 @@ class CheckerController:
                 # Add output to test results
                 test_results.append(executor.output.split("\n"))
 
-                current_result = [elem.strip() for elem in executor.output.split("\n")]
+                current_result = [elem.strip()
+                                  for elem in executor.output.split("\n")]
             except TimeoutError as err:
                 # Add error to test results
                 test_results.append(str(err))

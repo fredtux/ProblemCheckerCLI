@@ -9,5 +9,5 @@ class ExecutorPHP(Executor):
     def __call__(self, file_name):
         """Open subprocess when called"""
 
-        self.subproc = Popen(['php', file_name], stdin=PIPE, stdout=PIPE, stderr=PIPE)
-
+        self.subproc = Popen(['php', file_name],
+                             stdin=PIPE, stdout=PIPE, stderr=PIPE)

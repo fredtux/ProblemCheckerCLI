@@ -10,5 +10,5 @@ class ExecutorPython(Executor):
     def __call__(self, file_name):
         """Open subprocess when called"""
 
-        self.subproc = Popen([executable, file_name], stdin=PIPE, stdout=PIPE, stderr=PIPE)
-
+        self.subproc = Popen([executable, file_name],
+                             stdin=PIPE, stdout=PIPE, stderr=PIPE)
