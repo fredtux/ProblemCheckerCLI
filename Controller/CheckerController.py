@@ -72,7 +72,7 @@ class CheckerController:
                 # Add output to test results
                 test_results.append(executor.output.split("\n"))
 
-                current_result = executor.output.split("\n")
+                current_result = [elem.strip() for elem in executor.output.split("\n")]
             except TimeoutError as err:
                 # Add error to test results
                 test_results.append(str(err))
